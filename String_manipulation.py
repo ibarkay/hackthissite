@@ -4,7 +4,7 @@ import re
 #req
 headers = {'Referer': 'https://www.hackthissite.org/missions/prog/12/'}
 url = 'https://www.hackthissite.org/missions/prog/12/'
-cookies = {'PHPSESSID':'l6h9mkopr5o4kj1vd731cfu593','phpbb3_28pla_u':'1','phpbb3_28pla_k':'','phpbb3_28pla_sid':'b7a6ef76155092637b904da677b283d2'}
+cookies = {'PHPSESSID':'YOUR_COOKIE_HERE','phpbb3_28pla_u':'1','phpbb3_28pla_k':'','phpbb3_28pla_sid':'b7a6ef76155092637b904da677b283d2'}
 r = requests.get(url,cookies=cookies)
 rc =r.content
 
@@ -45,7 +45,7 @@ for i in nOfstring:
         constys.append(int(i))
     else:
         primeis.append(int(i))
-print primeis,constys
+
 
 #math
 sPrims = sum(primeis)
@@ -66,8 +66,8 @@ result = ''
 for i in nonDigits:
     result += chr(ord(i)+1) #up by 1 ASCII
 
-result += str(multip) # add the multipy of prmes and const to the result
-print result
+result += str(multip) # add the multipy of prmes and const (math) to the result
+
 
 #finally SUBMIT result --- note that submitbutton data is a must
 rp = requests.post("https://www.hackthissite.org/missions/prog/12/index.php",headers=headers,cookies=cookies, data={'solution':result,'submitbutton':'Submit (remaining time: 5 seconds)'})
